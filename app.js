@@ -64,7 +64,7 @@ function Header({route}){
   useEffect(()=>()=>document.body.classList.remove('menu-open'),[]);
 
   const toggle=()=>setOpen(v=>!v);
-  const light=route.page==='sobre'&&!scrolled&&!open;
+  const light=false;
   return h('header',{className:`site-header ${scrolled?'scrolled':''} ${light?'on-light':''} ${open?'menu-visible':''}`},
     h('a',{className:'brand',href:'#inicio','aria-label':'Ir para o início',onClick:closeMenu},
       h('span',{className:'brand-mark'},'M',h('i',null,'V'),'M'),
@@ -97,8 +97,9 @@ function PageHero({type,kicker,title,em,subtitle,primary,secondary}){
 }
 
 function SectionHeading({number,title,em,intro,dark=false}){
+  const label=(number||'').replace(/^\s*\d+\s*\/\s*/,'');
   return h('div',{className:'section-head'},
-    h('div',{className:'section-number'},number),
+    h('div',{className:'section-number'},label),
     h('div',null,
       h('h2',{className:'section-title'},title,' ',h('em',null,em)),
       intro&&h('p',{className:'section-intro'},intro)));
@@ -116,7 +117,7 @@ function AreaCards({compact=false}){
 function ProcessSection({dark=false}){
   return h('section',{className:`section ${dark?'section-navy':'section-paper'} process-section`},
     h('div',{className:'container'},
-      h(SectionHeading,{number:'03 / ATENDIMENTO',title:'Um processo',em:'organizado.',intro:'Uma experiência de atendimento estruturada para dar clareza ao cliente sem transformar cada caso em uma fórmula pronta.'}),
+      h(SectionHeading,{number:'ATENDIMENTO',title:'Um processo',em:'organizado.',intro:'Uma experiência de atendimento estruturada para dar clareza ao cliente sem transformar cada caso em uma fórmula pronta.'}),
       h('div',{className:'process-grid'},PROCESS.map(([t,d])=>h('article',{className:'process-card','data-reveal':true,key:t},
         h('h3',null,t),h('p',null,d))))));
 }
@@ -141,7 +142,7 @@ function Home(){
     h('section',{className:'section section-paper'},h('div',{className:'container'},
       h('div',{className:'home-intro-grid'},
         h('div',{className:'home-intro-copy','data-reveal':true},
-          h('div',{className:'section-number'},'01 / SOCIEDADE'),
+          h('div',{className:'section-number'},'SOCIEDADE'),
           h('h2',null,'Estratégia jurídica sem perder a ',h('span',{style:{color:'#9c7731'}},'proximidade.')),
           h('p',null,'A MVM Sociedade de Advogados reúne atuação multidisciplinar, análise cuidadosa e organização para orientar cada demanda de forma individualizada. A proposta é combinar rigor técnico, linguagem clara e acompanhamento próximo.')),
         h('div',{className:'statement','data-reveal':true},'“Cada atendimento começa pela compreensão do contexto, não por respostas prontas.”')),
@@ -151,7 +152,7 @@ function Home(){
         h('article',null,h('h3',null,'Clareza'),h('p',null,'Comunicação objetiva para que o cliente compreenda etapas, documentos e próximos passos.'))))),
 
     h('section',{className:'section section-dark home-practice'},h('div',{className:'container'},
-      h(SectionHeading,{number:'02 / ÁREAS DE ATUAÇÃO',title:'Atuação',em:'multidisciplinar.',intro:'Nove frentes jurídicas apresentadas de forma institucional. A estratégia de cada caso depende da análise individual dos fatos e documentos.'}),
+      h(SectionHeading,{number:'ÁREAS DE ATUAÇÃO',title:'Atuação',em:'multidisciplinar.',intro:'Nove frentes jurídicas apresentadas de forma institucional. A estratégia de cada caso depende da análise individual dos fatos e documentos.'}),
       h(AreaCards,{compact:true}),
       h('div',{className:'section-actions'},h('a',{className:'btn btn-ghost',href:'#especialidades'},'Ver especialidades em detalhes')))),
 
@@ -160,7 +161,7 @@ function Home(){
     h('section',{className:'section home-office-teaser'},
       h('div',{className:'container office-teaser-grid'},
         h('div',{'data-reveal':true},
-          h('div',{className:'section-number'},'04 / O ESCRITÓRIO'),
+          h('div',{className:'section-number'},'O ESCRITÓRIO'),
           h('h2',{className:'section-title'},'Uma estrutura pensada para ',h('em',null,'atender bem.')),
           h('p',{className:'section-intro'},'Conheça a identidade institucional da sociedade, a forma de trabalho e os princípios que orientam o atendimento jurídico.'),
           h('a',{className:'text-link',href:'#escritorio'},'Conhecer o escritório →')),
@@ -174,7 +175,7 @@ function Office(){
 
     h('section',{className:'section section-paper',id:'institucional'},h('div',{className:'container office-story'},
       h('div',{'data-reveal':true},
-        h('div',{className:'section-number'},'01 / INSTITUCIONAL'),
+        h('div',{className:'section-number'},'INSTITUCIONAL'),
         h('h2',{className:'section-title',style:{marginTop:'16px'}},'Medeiros, Vasconcelos ',h('em',null,'& Monteiro.')),
         h('p',{className:'office-lead'},'A sociedade reúne três advogados responsáveis e atuação em nove áreas do Direito. O atendimento é organizado para permitir compreensão do caso, análise documental e construção de caminhos jurídicos compatíveis com a situação apresentada.'),
         h('p',null,'A identidade do escritório parte de três pontos: seriedade técnica, comunicação acessível e proximidade no acompanhamento. Cada demanda possui características próprias e, por isso, é tratada de forma individualizada.')),
@@ -185,7 +186,7 @@ function Office(){
         h('span',null,'SOCIEDADE DE ADVOGADOS')))),
 
     h('section',{className:'section section-ivory'},h('div',{className:'container'},
-      h(SectionHeading,{number:'02 / PRINCÍPIOS',title:'Como o escritório',em:'trabalha.',intro:'Princípios institucionais que orientam a experiência de atendimento e a organização das demandas.'}),
+      h(SectionHeading,{number:'PRINCÍPIOS',title:'Como o escritório',em:'trabalha.',intro:'Princípios institucionais que orientam a experiência de atendimento e a organização das demandas.'}),
       h('div',{className:'principles-grid'},
         h('article',{'data-reveal':true},h('h3',null,'Análise individual'),h('p',null,'Cada situação é observada a partir de seus fatos, documentos e objetivos, evitando soluções genéricas.')),
         h('article',{'data-reveal':true},h('h3',null,'Comunicação clara'),h('p',null,'Informações jurídicas traduzidas em linguagem objetiva para facilitar decisões conscientes.')),
@@ -210,7 +211,7 @@ function AboutOpening(){
         h('a',{className:'btn btn-dark',href:'#contato'},'Entrar em contato')),
       h('div',{className:'about-opening-visual','data-reveal':true},
         h('div',{className:'about-photo-frame'},
-          h('img',{src:'assets/justice-office.webp',alt:'Representação da Justiça em ambiente jurídico',loading:'eager'}),
+          h('img',{src:'assets/about-opening-scales.webp',alt:'Balança da justiça em ambiente jurídico',loading:'eager'}),
           h('span',{className:'about-photo-accent','aria-hidden':'true'})))));
 }
 
@@ -218,7 +219,7 @@ function About(){
   return h('main',{id:'page-content',className:'page page-enter about-page'},
     h(AboutOpening),
     h('section',{className:'section section-ivory',id:'equipe'},h('div',{className:'container'},
-      h(SectionHeading,{number:'02 / EQUIPE',title:'Advogados',em:'responsáveis.',intro:'Perfis institucionais e números de inscrição informados para identificação profissional.'}),
+      h(SectionHeading,{number:'EQUIPE',title:'Advogados',em:'responsáveis.',intro:'Perfis institucionais e números de inscrição informados para identificação profissional.'}),
       h('div',{className:'team-grid'},LAWYERS.map(l=>h('article',{key:l.id,id:l.id,className:'lawyer-card lawyer-anchor','data-reveal':true},
         h('div',{className:'lawyer-photo'},h('img',{src:l.image,alt:l.name,loading:'lazy'})),
         h('div',{className:'lawyer-info'},h('small',null,'Advocacia'),h('h3',null,l.name),h('div',{className:'oab'},l.oab),h('p',null,l.text))))))),
@@ -229,7 +230,7 @@ function Specialties(){
   return h('main',{id:'page-content',className:'page page-enter'},
     h(PageHero,{type:'specialties',kicker:'Especialidades',title:'Conhecimento jurídico.',em:'Visão integrada.',subtitle:'Atuação em nove áreas do Direito, com análise individual de cada demanda e encaminhamento técnico conforme suas particularidades.',primary:{href:'#especialidades/areas',label:'Ver áreas de atuação'},secondary:{href:'#contato',label:'Solicitar contato'}}),
     h('section',{className:'section section-dark',id:'areas'},h('div',{className:'container'},
-      h(SectionHeading,{number:'01 / ATUAÇÃO',title:'Áreas de',em:'atuação.',intro:'Cada área é apresentada em caráter institucional. A definição de estratégia depende da análise dos fatos e documentos de cada caso.'}),
+      h(SectionHeading,{number:'ATUAÇÃO',title:'Áreas de',em:'atuação.',intro:'Cada área é apresentada em caráter institucional. A definição de estratégia depende da análise dos fatos e documentos de cada caso.'}),
       h(AreaCards),
       h('div',{className:'disclaimer'},'As informações deste site têm caráter exclusivamente institucional e informativo e não substituem consulta jurídica individualizada.'))),
     h(CtaBand,{title:'Quer entender qual área se relaciona ao seu caso?',href:'#contato',label:'Falar com o escritório'}));
@@ -267,7 +268,7 @@ function Contact(){
     h(PageHero,{type:'contact',kicker:'Contato',title:'Um primeiro contato.',em:'Com clareza.',subtitle:'Fale diretamente com o escritório pelos canais institucionais abaixo. Para análise jurídica, a equipe poderá solicitar documentos e informações adicionais.',primary:{href:'#contato/canais',label:'Ver canais de contato'},secondary:{href:'mailto:contato@mvmadvocacia.com.br',label:'Enviar e-mail'}}),
     h('section',{className:'section section-navy',id:'canais'},h('div',{className:'container contact-grid'},
       h('div',{'data-reveal':true},
-        h('div',{className:'section-number'},'01 / CONTATO'),
+        h('div',{className:'section-number'},'CONTATO'),
         h('h2',{className:'section-title',style:{marginTop:'16px'}},'Fale com o ',h('em',null,'escritório.')),
         h('p',{className:'section-intro'},'Utilize o e-mail institucional ou os telefones informados. Para uma análise adequada, a equipe poderá solicitar informações e documentos adicionais.'),
         h('div',{className:'contact-list'},
@@ -279,7 +280,8 @@ function Contact(){
 }
 
 function WhatsAppFloat(){
-  const href='https://wa.me/5534996600327?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20o%20escrit%C3%B3rio%20Medeiros%2C%20Vasconcelos%20%26%20Monteiro.';
+  const href = 'https://wa.me/5534996600327?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20o%20escrit%C3%B3rio%20Medeiros%2C%20Vasconcelos%20%26%20Monteiro';
+
   return h('a',{
     className:'whatsapp-float',
     href,
@@ -288,12 +290,26 @@ function WhatsAppFloat(){
     'aria-label':'Falar com o escritório pelo WhatsApp',
     title:'WhatsApp do escritório'
   },
-    h('svg',{className:'whatsapp-icon',viewBox:'0 0 24 24','aria-hidden':'true'},
-      h('path',{d:'M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.4-4.2A8.5 8.5 0 1 1 20.5 11.7Z'}),
-      h('path',{d:'M8.15 7.55c.34-.35.92-.3 1.2.1l1.08 1.48c.22.31.2.73-.05 1.02l-.67.77c.75 1.55 1.77 2.57 3.33 3.33l.77-.67c.29-.25.71-.27 1.02-.05l1.48 1.08c.4.28.45.86.1 1.2l-.63.63c-.68.68-1.68.9-2.57.56-3.52-1.36-6.26-4.1-7.62-7.62-.34-.89-.12-1.89.56-2.57l.5-.5'})),
-    h('span',{className:'whatsapp-legal-badge','aria-hidden':'true'},
+
+    // ÍCONE DO WHATSAPP - IONICON
+    h('ion-icon',{
+      name:'logo-whatsapp',
+      className:'whatsapp-icon',
+      'aria-hidden':'true'
+    }),
+
+    // MANTÉM O ÍCONE DE JUSTIÇA
+    h('span',{
+      className:'whatsapp-legal-badge',
+      'aria-hidden':'true'
+    },
       h('svg',{viewBox:'0 0 16 16'},
-        h('path',{d:'M8 2v10M4 4h8M3.2 5.2 1.8 8h2.8L3.2 5.2Zm9.6 0L11.4 8h2.8l-1.4-2.8ZM5.5 13h5'}))));
+        h('path',{
+          d:'M8 2v10M4 4h8M3.2 5.2 1.8 8h2.8L3.2 5.2Zm9.6 0L11.4 8h2.8l-1.4-2.8ZM5.5 13h5'
+        })
+      )
+    )
+  );
 }
 
 function Footer(){

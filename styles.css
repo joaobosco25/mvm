@@ -151,7 +151,9 @@ button{color:inherit}
 .home-office-teaser::before{content:"";position:absolute;inset:0 50% 0 0;background:linear-gradient(90deg,rgba(238,232,222,.97),rgba(238,232,222,.75),transparent);pointer-events:none;z-index:1}
 .office-teaser-grid{position:relative;z-index:2;display:grid;grid-template-columns:.88fr 1.12fr;align-items:center;gap:70px;min-height:560px}
 .office-teaser-grid>div:first-child{padding:70px 0}
-.teaser-image{min-height:460px;background:url('assets/justice-office.webp') center/cover no-repeat;box-shadow:0 30px 70px rgba(6,18,29,.18)}
+.teaser-image{position:relative;min-height:460px;background:url('assets/justice-office.webp') center 42%/cover no-repeat;border:1px solid rgba(166,126,49,.42);border-radius:2px 42px 2px 42px;box-shadow:0 32px 70px rgba(6,18,29,.18),18px 18px 0 rgba(177,137,57,.12);overflow:hidden;transform:translateY(-10px)}
+.teaser-image::before{content:"";position:absolute;inset:12px;border:1px solid rgba(246,239,222,.42);border-radius:1px 31px 1px 31px;pointer-events:none}
+.teaser-image::after{content:"";position:absolute;left:24px;bottom:22px;width:92px;height:1px;background:linear-gradient(90deg,#d0a84e,transparent);box-shadow:0 -6px 0 -3px rgba(208,168,78,.7);pointer-events:none}
 .text-link{display:inline-block;margin-top:28px;font-size:9px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;border-bottom:1px solid var(--gold);padding-bottom:6px}
 
 .cta-band{position:relative;padding:76px 0;background:linear-gradient(110deg,#b78f42,#d8bd78);overflow:hidden}
@@ -175,19 +177,19 @@ button{color:inherit}
 .principles-grid p{font-size:10px;line-height:1.85;color:#68737b;margin:0;max-width:480px}
 
 .about-page{background:var(--paper2)}
-.about-opening{position:relative;min-height:100svh;padding:142px 0 76px;background:#071722;display:flex;align-items:center;overflow:hidden;color:#f4efe5;isolation:isolate}
-.about-opening::before{content:"";position:absolute;z-index:-2;inset:0 0 0 42%;background:url('assets/justice-office.webp') 42% center/cover no-repeat;opacity:.98;-webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.24) 10%,#000 28%,#000 100%);mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.24) 10%,#000 28%,#000 100%)}
-.about-opening::after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,#071722 0%,#071722 37%,rgba(7,23,34,.96) 46%,rgba(7,23,34,.5) 61%,rgba(7,23,34,.08) 82%),linear-gradient(0deg,rgba(3,11,18,.34),transparent 46%);pointer-events:none}
+.about-opening{position:relative;min-height:100svh;padding:142px 0 76px;background:radial-gradient(circle at 76% 18%,rgba(186,144,77,.14),transparent 26%),linear-gradient(90deg,#0a1723 0%,#0d1f30 42%,#13293b 100%);display:flex;align-items:center;overflow:hidden;color:#f6f1e7;isolation:isolate}
+.about-opening::before{content:"";position:absolute;z-index:-2;inset:0 0 0 44%;background:url('assets/about-opening-scales.webp') 52% center/cover no-repeat;opacity:.98;-webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.3) 12%,#000 30%,#000 100%);mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.3) 12%,#000 30%,#000 100%)}
+.about-opening::after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,#0a1723 0%,#0a1723 36%,rgba(10,23,35,.97) 46%,rgba(10,23,35,.72) 59%,rgba(10,23,35,.24) 76%,rgba(10,23,35,.05) 88%),linear-gradient(180deg,rgba(5,13,21,.1) 0%,rgba(5,13,21,.02) 38%,rgba(5,13,21,.28) 100%);pointer-events:none}
 .about-architectural{position:absolute;z-index:-1;inset:0;opacity:.3;background:radial-gradient(circle at 16% 18%,rgba(199,166,92,.13),transparent 28%),repeating-linear-gradient(108deg,rgba(255,255,255,.018) 0 1px,transparent 1px 36px);pointer-events:none}
 .about-opening-grid{position:relative;display:block}
 .about-opening-copy{width:min(53%,780px);padding-right:44px}
 .eyebrow-line{display:flex;align-items:center;gap:14px;font-size:9px;font-weight:700;letter-spacing:.14em;color:rgba(245,241,232,.72)}
 .eyebrow-line::after{content:"";width:112px;height:1px;background:var(--gold)}
-.about-opening-copy h1{font-family:var(--brand);font-size:clamp(46px,5vw,72px);font-weight:500;line-height:1.02;letter-spacing:-.04em;margin:26px 0 28px;color:#f5f0e7;text-transform:uppercase;text-shadow:0 8px 30px rgba(0,0,0,.16)}
-.about-opening-copy h1 span{display:block;color:#d2ad59;font-size:.82em;margin-top:7px}
-.about-opening-copy p{max-width:730px;color:rgba(244,239,229,.73);font-size:12px;line-height:1.92;margin:0 0 18px}
-.about-opening-copy .btn{margin-top:12px;background:#d4ad56;border-color:#d4ad56;color:#071722}
-.about-opening-copy .btn:hover{background:#ead08f;border-color:#ead08f;color:#071722}
+.about-opening-copy h1{font-family:var(--brand);font-size:clamp(46px,5vw,72px);font-weight:500;line-height:1.02;letter-spacing:-.04em;margin:26px 0 28px;color:#f8f3ea;text-transform:uppercase;text-shadow:0 8px 30px rgba(0,0,0,.18)}
+.about-opening-copy h1 span{display:block;color:#d8b264;font-size:.82em;margin-top:7px}
+.about-opening-copy p{max-width:730px;color:rgba(246,241,231,.78);font-size:12px;line-height:1.92;margin:0 0 18px}
+.about-opening-copy .btn{margin-top:12px;background:#d6ae59;border-color:#d6ae59;color:#0b1724}
+.about-opening-copy .btn:hover{background:#ecd39a;border-color:#ecd39a;color:#0b1724}
 .about-opening-visual{display:none}
 
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
@@ -322,14 +324,18 @@ button{color:inherit}
   .cta-band{padding:54px 0}
   .cta-band-grid{align-items:flex-start;flex-direction:column}
   .cta-band h2{font-size:28px}
-  .about-opening{min-height:auto;padding:390px 0 72px;align-items:flex-start;background:#071722}
-  .about-opening::before{inset:0 0 auto 0;height:430px;background-position:39% center;background-size:cover;opacity:.96;-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 58%,rgba(0,0,0,.72) 76%,transparent 100%);mask-image:linear-gradient(180deg,#000 0%,#000 58%,rgba(0,0,0,.72) 76%,transparent 100%)}
-  .about-opening::after{background:linear-gradient(180deg,rgba(4,14,23,.08) 0%,rgba(4,14,23,.15) 46%,#071722 79%,#071722 100%)}
-  .about-architectural{opacity:.18}
+  .about-opening{min-height:100svh;padding:124px 0 68px;align-items:flex-end;background:#0a1723;color:#fff}
+  .about-opening::before{display:block;content:"";position:absolute;z-index:-2;inset:0;background:url('assets/about-opening-scales.webp') 54% center/cover no-repeat;opacity:1;-webkit-mask-image:none;mask-image:none}
+  .about-opening::after{display:block;content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(180deg,rgba(4,14,24,.3) 0%,rgba(4,14,24,.48) 36%,rgba(4,14,24,.92) 78%,rgba(4,14,24,.98) 100%),linear-gradient(90deg,rgba(4,14,24,.9),rgba(4,14,24,.32));pointer-events:none}
+  .about-opening-grid{display:block}
+  .about-opening-visual{display:none}
+  .about-architectural{opacity:.12}
   .about-opening-copy{width:100%;padding-right:0}
-  .about-opening-copy h1{font-size:clamp(38px,10vw,56px);margin-top:20px}
-  .about-opening-copy p{font-size:11px;color:rgba(244,239,229,.74)}
-  .about-opening-copy .btn{width:auto}
+  .about-opening-copy h1{font-size:clamp(38px,10vw,56px);margin-top:20px;color:#f7f2e8;text-shadow:0 10px 34px rgba(0,0,0,.28)}
+  .about-opening-copy h1 span{color:#d8b264}
+  .about-opening-copy p{font-size:11px;color:rgba(247,242,232,.78)}
+  .about-opening-copy .btn{width:auto;background:#d6ae59;border-color:#d6ae59;color:#0a1723}
+  .about-opening-copy .btn:hover{background:#ecd39a;border-color:#ecd39a;color:#0a1723}
   .team-grid{grid-template-columns:1fr}
   .team-grid .lawyer-card:last-child{grid-column:auto;width:auto}
   .lawyer-photo{height:auto;aspect-ratio:.78/1}
@@ -339,7 +345,8 @@ button{color:inherit}
   .contact-item{flex-direction:column;gap:7px}
   .contact-item a{white-space:normal}
   .office-teaser-grid{min-height:0}
-  .teaser-image{min-height:360px}
+  .teaser-image{min-height:360px;border-radius:2px 28px 2px 28px;box-shadow:0 24px 54px rgba(6,18,29,.16),10px 10px 0 rgba(177,137,57,.1);transform:none}
+  .teaser-image::before{inset:9px;border-radius:1px 20px 1px 20px}
   .footer-main{grid-template-columns:1fr;gap:30px}
   .footer-bottom{flex-direction:column}
 }
@@ -451,4 +458,8 @@ button{color:inherit}
 @media(prefers-reduced-motion:reduce){
   .whatsapp-float{animation:none}
 }
-
+.whatsapp-icon {
+  width: 38px;
+  height: 38px;
+  font-size: 38px;
+}
