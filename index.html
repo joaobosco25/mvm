@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#06121d" />
+  <meta name="description" content="Medeiros, Vasconcelos & Monteiro | Sociedade de Advogados — OAB/MG 23.417." />
+  <meta name="robots" content="index,follow" />
+  <title>MVM | Sociedade de Advogados</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="assets/area-civil.webp" />
+  <link rel="preload" as="image" href="assets/justice-office.webp" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    #intro{position:fixed;inset:0;z-index:99999;background:#06121d;display:grid;place-items:center;overflow:hidden}
+    .intro-core{display:grid;place-items:center;gap:17px;opacity:0;transform:translateY(6px)}
+    .intro-symbol{width:86px;height:86px;object-fit:contain;opacity:.96}
+    .intro-line{width:0;height:1px;background:linear-gradient(90deg,transparent,#c9a75d,transparent)}
+    html.intro-lock,html.intro-lock body{overflow:hidden}
+    html.intro-lock #root{visibility:hidden}
+    @media(max-width:640px){.intro-symbol{width:72px;height:72px}}
+  </style>
+  <script>document.documentElement.classList.add('intro-lock');</script>
+</head>
+<body>
+  <a class="skip-link" href="#page-content">Pular para o conteúdo</a>
+  <div id="intro" aria-hidden="true">
+    <div class="intro-core">
+      <img class="intro-symbol" src="assets/area-civil.webp" alt="" />
+      <span class="intro-line"></span>
+    </div>
+  </div>
+  <div id="root"></div>
+  <noscript><div class="noscript">Este site precisa de JavaScript habilitado.</div></noscript>
+  <script src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js" crossorigin></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
