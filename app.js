@@ -3,8 +3,8 @@ const {useEffect,useMemo,useState}=React;
 const h=React.createElement;
 
 const LAWYERS=[
-  {id:'rafaella',short:'Dra. R. Vasconcelos',name:'Dra. Rafaella Silva de Vasconcelos',oab:'OAB/MG 250.459',image:'assets/rafaella-vasconcelos.jpeg',text:'Atendimento jurídico com escuta cuidadosa, análise técnica e comunicação clara em cada etapa.'},
-  {id:'rafaele',short:'Dra. Rafaele Monteiro',name:'Dra. Rafaele Hemanuele Monteiro Rodrigues Ferreira',oab:'OAB/MG 246.172',image:'assets/rafaele-monteiro.jpeg',text:'Atuação pautada por organização, proximidade e construção de soluções jurídicas adequadas ao contexto de cada cliente.'},
+  {id:'rafaella',short:'Dra. R. Vasconcelos',name:'Dra. Rafaella Silva de Vasconcelos',oab:'OAB/MG 250.459',image:'assets/rafaela.png',text:'Atendimento jurídico com escuta cuidadosa, análise técnica e comunicação clara em cada etapa.'},
+  {id:'rafaele',short:'Dra. Rafaele Monteiro',name:'Dra. Rafaele Hemanuele Monteiro Rodrigues Ferreira',oab:'OAB/MG 246.172',image:'assets/rafaele.png',text:'Atuação pautada por organização, proximidade e construção de soluções jurídicas adequadas ao contexto de cada cliente.'},
   {id:'marcus',short:'Dr. Medeiros',name:'Dr. Marcus Vinicius da Silva Medeiros Tomé',oab:'OAB/MG 243.765',image:'assets/marcus-vinicius.png',text:'Condução técnica de demandas e orientação jurídica objetiva, com atenção aos detalhes e às particularidades de cada caso.'},
 ];
 

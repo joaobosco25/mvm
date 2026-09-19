@@ -458,8 +458,119 @@ button{color:inherit}
 @media(prefers-reduced-motion:reduce){
   .whatsapp-float{animation:none}
 }
-.whatsapp-icon {
-  width: 38px;
-  height: 38px;
-  font-size: 38px;
+
+
+/* Refinos institucionais solicitados */
+.hero-meta{width:280px;display:grid;gap:3px}
+.hero-meta strong{font-size:16px;line-height:1.35}
+.hero-meta span{display:block}
+.hero-meta .hero-meta-oab{color:rgba(255,255,255,.78);letter-spacing:.08em}
+
+.office-society-line,.about-opening-mark{
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+  margin:18px 0 0;
+  font-family:var(--brand);
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+.office-society-line strong,.about-opening-mark strong{
+  color:var(--gold);
+  font-size:13px;
+  font-weight:600;
+}
+.office-society-line span,.about-opening-mark span{
+  color:#617080;
+  font-size:10px;
+}
+.about-opening-mark span{color:rgba(246,241,231,.66)}
+.about-signature{
+  padding-top:8px;
+  font-family:var(--brand);
+  font-size:14px !important;
+  line-height:1.8 !important;
+  color:#ecd39a !important;
+}
+
+.office-register{padding:40px 38px}
+.office-register-name{
+  margin:24px 0 10px;
+  font-family:var(--brand);
+  font-size:26px;
+  line-height:1.22;
+  color:var(--navy);
+  text-transform:uppercase;
+}
+.office-register-tag{
+  display:block;
+  color:#9c7731;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+}
+.office-register strong{margin:14px 0 0;font-size:28px;color:#203349}
+
+.team-grid{align-items:start}
+.lawyer-photo-rafaele{height:430px;background:#f0ece6}
+.lawyer-photo-rafaele img{object-position:center 8%}
+.lawyer-card-marcus .lawyer-photo{background:#ece9e3}
+
+.footer-main{grid-template-columns:1.1fr .7fr 1fr .85fr;gap:42px}
+.footer-brand-col{display:flex;flex-direction:column;align-items:flex-start}
+.footer-logo-wrap{
+  width:138px;
+  padding:10px;
+  background:#f8f5ef;
+  border:1px solid rgba(199,166,92,.2);
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+.footer-logo{width:100%;height:auto;display:block}
+.footer-brand{margin-top:18px;font-size:22px;line-height:1.18}
+.footer-brand-tag{
+  margin-top:12px;
+  color:var(--gold2);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+}
+.footer-brand-oab{
+  margin-top:6px;
+  font-family:var(--brand);
+  font-size:14px;
+  color:white;
+  letter-spacing:.04em;
+}
+.footer-title{
+  margin:0 0 16px;
+  color:var(--gold2);
+  font-family:var(--sans);
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.footer-areas,.footer-contact,.footer-nav{display:grid;gap:10px}
+.footer-areas a,.footer-nav a,.footer-contact a,.footer-contact span{
+  font-size:9px;
+  line-height:1.8;
+  color:rgba(255,255,255,.7);
+}
+.footer-areas a:hover,.footer-nav a:hover,.footer-contact a:hover{color:var(--gold2)}
+.footer-contact a:nth-child(1),.footer-contact a:nth-child(2),.footer-contact a:nth-child(3){color:var(--gold2)}
+.footer-bottom{text-transform:none;letter-spacing:.05em}
+
+@media(max-width:1100px){
+  .footer-main{grid-template-columns:1fr 1fr}
+}
+
+@media(max-width:780px){
+  .about-opening-mark{margin:16px 0 6px}
+  .office-society-line strong,.about-opening-mark strong{font-size:12px}
+  .lawyer-photo-rafaele{height:auto;aspect-ratio:1/1}
+  .footer-main{grid-template-columns:1fr;gap:30px}
+  .footer-logo-wrap{width:126px}
+  .footer-brand{font-size:20px}
 }
