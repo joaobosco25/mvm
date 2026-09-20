@@ -85,11 +85,13 @@ function Header({route}){
 }
 
 function PageHero({type,kicker,title,em,subtitle,primary,secondary}){
+  const heroTitle=(title||'').replace(/\.+\s*$/,'');
+  const heroEm=(em||'').replace(/\.+\s*$/,'');
   return h('section',{className:`photo-hero hero-${type}`},
     h('div',{className:'hero-noise'}),
     h('div',{className:'container hero-content'},
       h('p',{className:'hero-kicker'},kicker),
-      h('h1',{className:'hero-title'},title,' ',h('em',null,em)),
+      h('h1',{className:'hero-title'},heroTitle,' ',h('em',null,heroEm)),
       h('p',{className:'hero-subtitle'},subtitle),
       h('div',{className:'hero-actions'},
         primary&&h('a',{className:'btn btn-primary',href:primary.href},primary.label),

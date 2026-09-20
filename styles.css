@@ -699,3 +699,20 @@ button{color:inherit}
     hyphens:none;
   }
 }
+
+/* Política de Privacidade — adição isolada */
+.privacy-page{background:var(--paper2)}
+.privacy-hero{padding:156px 0 76px;background:var(--navy);color:white;border-bottom:1px solid rgba(255,255,255,.08)}
+.privacy-hero-inner{max-width:920px}
+.privacy-hero h1{margin:16px 0 20px;font-family:var(--brand);font-size:clamp(44px,6vw,78px);line-height:1;font-weight:500;letter-spacing:-.035em;text-transform:uppercase}
+.privacy-hero h1 em{font-style:normal;color:var(--gold2)}
+.privacy-hero p{max-width:760px;margin:0;color:rgba(255,255,255,.68);font-size:12px;line-height:1.9}
+.privacy-content{max-width:920px}
+.privacy-content h2{margin:42px 0 14px;font-family:var(--brand);font-size:22px;font-weight:500;color:var(--navy);text-transform:uppercase}
+.privacy-content p{margin:0 0 20px;color:#5f6b73;font-size:12px;line-height:2;text-align:justify;text-align-last:left;hyphens:auto}
+.privacy-last-update{margin-top:42px!important;padding-top:18px;border-top:1px solid var(--line);font-size:10px!important;color:#7c858c!important}
+@media(max-width:780px){
+  .privacy-hero{padding:118px 0 58px}
+  .privacy-hero h1{font-size:clamp(38px,11vw,52px)}
+  .privacy-content h2{font-size:19px}
+}

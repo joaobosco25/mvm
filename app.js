@@ -3,9 +3,9 @@ const {useEffect,useMemo,useState}=React;
 const h=React.createElement;
 
 const LAWYERS=[
-  {id:'rafaella',short:'Dra. R. Vasconcelos',name:'Dra. Rafaella Silva de Vasconcelos',oab:'OAB/MG 250.459',image:'assets/rafaela.png',text:'Atuação orientada por escuta atenta, análise criteriosa e comunicação objetiva com o cliente. Conduz cada demanda de forma individualizada, buscando compreender o contexto apresentado, organizar as informações relevantes e oferecer orientação jurídica clara ao longo de todas as etapas do atendimento.'},
+  {id:'rafaella',short:'Dra. Rafaella Vasconcelos',name:'Dra. Rafaella Silva de Vasconcelos',oab:'OAB/MG 250.459',image:'assets/rafaela.png',text:'Atuação orientada por escuta atenta, análise criteriosa e comunicação objetiva com o cliente. Conduz cada demanda de forma individualizada, buscando compreender o contexto apresentado, organizar as informações relevantes e oferecer orientação jurídica clara ao longo de todas as etapas do atendimento.'},
   {id:'rafaele',short:'Dra. Rafaele Monteiro',name:'Dra. Rafaele Hemanuele Monteiro Rodrigues Ferreira',oab:'OAB/MG 246.172',image:'assets/rafaele.png',text:'Atuação pautada pela proximidade, organização e atenção aos detalhes de cada caso. O atendimento é desenvolvido de forma individualizada, com análise cuidadosa das circunstâncias apresentadas, clareza na comunicação e construção de estratégias jurídicas compatíveis com as necessidades de cada cliente.'},
-  {id:'marcus',short:'Dr. Medeiros',name:'Dr. Marcus Vinicius da Silva Medeiros Tomé',oab:'OAB/MG 243.765',image:'assets/marcus-vinicius.png',text:'Atuação com foco na análise técnica e estratégica das demandas, acompanhando cada situação com responsabilidade e atenção às suas particularidades. Prioriza uma comunicação direta e compreensível, organização das informações e definição de caminhos jurídicos coerentes com o contexto apresentado pelo cliente.'},
+  {id:'marcus',short:'Dr. Marcus Vinicius',name:'Dr. Marcus Vinicius da Silva Medeiros Tomé',oab:'OAB/MG 243.765',image:'assets/marcus-vinicius.png',text:'Atuação com foco na análise técnica e estratégica das demandas, acompanhando cada situação com responsabilidade e atenção às suas particularidades. Prioriza uma comunicação direta e compreensível, organização das informações e definição de caminhos jurídicos coerentes com o contexto apresentado pelo cliente.'},
 ];
 
 const AREAS=[
@@ -30,7 +30,7 @@ const PROCESS=[
 function routeFromHash(){
   const raw=(location.hash||'#inicio').replace(/^#/,'').replace(/^\//,'');
   const [page,anchor]=raw.split('/');
-  return {page:['inicio','escritorio','sobre','especialidades','contato'].includes(page)?page:'inicio',anchor:anchor||null};
+  return {page:['inicio','escritorio','sobre','especialidades','contato','privacidade'].includes(page)?page:'inicio',anchor:anchor||null};
 }
 
 function Header({route}){
@@ -85,11 +85,13 @@ function Header({route}){
 }
 
 function PageHero({type,kicker,title,em,subtitle,primary,secondary}){
+  const heroTitle=(title||'').replace(/\.+\s*$/,'');
+  const heroEm=(em||'').replace(/\.+\s*$/,'');
   return h('section',{className:`photo-hero hero-${type}`},
     h('div',{className:'hero-noise'}),
     h('div',{className:'container hero-content'},
       h('p',{className:'hero-kicker'},kicker),
-      h('h1',{className:'hero-title'},title,' ',h('em',null,em)),
+      h('h1',{className:'hero-title'},heroTitle,' ',h('em',null,heroEm)),
       h('p',{className:'hero-subtitle'},subtitle),
       h('div',{className:'hero-actions'},
         primary&&h('a',{className:'btn btn-primary',href:primary.href},primary.label),
@@ -275,6 +277,34 @@ function Contact(){
       h(ContactForm))));
 }
 
+
+function Privacy(){
+  return h('main',{id:'page-content',className:'page page-enter privacy-page'},
+    h('section',{className:'privacy-hero'},
+      h('div',{className:'container privacy-hero-inner'},
+        h('div',{className:'section-number'},'PRIVACIDADE'),
+        h('h1',null,'Política de ',h('em',null,'Privacidade')),
+        h('p',null,'Informações sobre o tratamento de dados pessoais no site da Medeiros, Vasconcelos & Monteiro Sociedade de Advogados.'))),
+    h('section',{className:'section section-paper'},
+      h('div',{className:'container privacy-content'},
+        h('p',null,'A Medeiros, Vasconcelos & Monteiro Sociedade de Advogados, OAB/MG 23.417, respeita a privacidade dos visitantes deste site e busca tratar dados pessoais de forma compatível com a legislação aplicável, especialmente a Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018).'),
+        h('h2',null,'1. Dados que podem ser tratados'),
+        h('p',null,'Quando o visitante utiliza os canais disponibilizados no site, podem ser fornecidos dados como nome, e-mail, telefone, área jurídica de interesse e o conteúdo da mensagem enviada. O site também pode processar informações técnicas necessárias ao seu funcionamento, como dados de navegação, endereço IP, tipo de dispositivo e registros de acesso, conforme os recursos utilizados pelo navegador e pelos serviços de hospedagem.'),
+        h('h2',null,'2. Finalidades'),
+        h('p',null,'Os dados fornecidos podem ser utilizados para responder solicitações de contato, organizar o atendimento, prestar informações institucionais, dar continuidade a comunicações iniciadas pelo próprio titular e cumprir obrigações legais ou regulatórias aplicáveis à atividade profissional.'),
+        h('h2',null,'3. Canais externos'),
+        h('p',null,'O site disponibiliza links para e-mail e WhatsApp. Ao utilizar esses canais, o tratamento de dados também poderá estar sujeito às políticas e condições dos respectivos provedores. O formulário de contato do site prepara a mensagem para envio pelo aplicativo de e-mail do próprio visitante.'),
+        h('h2',null,'4. Compartilhamento e segurança'),
+        h('p',null,'Dados pessoais não são comercializados. O compartilhamento poderá ocorrer quando necessário para viabilizar serviços tecnológicos, cumprir obrigações legais, exercer direitos ou atender determinações de autoridades competentes, observadas as medidas de segurança e confidencialidade aplicáveis.'),
+        h('h2',null,'5. Direitos do titular'),
+        h('p',null,'Nos termos da legislação aplicável, o titular pode solicitar informações sobre o tratamento de seus dados e, quando cabível, exercer direitos como confirmação, acesso, correção, eliminação, anonimização, portabilidade, oposição e revogação de consentimento.'),
+        h('h2',null,'6. Contato sobre privacidade'),
+        h('p',null,'Solicitações relacionadas a privacidade e proteção de dados podem ser encaminhadas para o e-mail institucional contato@mvmadvocacia.com.br.'),
+        h('h2',null,'7. Atualizações desta política'),
+        h('p',null,'Esta Política de Privacidade poderá ser atualizada para refletir mudanças legais, regulatórias ou operacionais. A versão vigente será sempre disponibilizada nesta página.'),
+        h('p',{className:'privacy-last-update'},'Última atualização: setembro de 2026.'))));
+}
+
 function WhatsAppFloat(){
   const href = 'https://wa.me/5534996600327?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20o%20escrit%C3%B3rio%20Medeiros%2C%20Vasconcelos%20%26%20Monteiro';
 
@@ -324,7 +354,8 @@ function Footer(){
           h('a',{href:'#escritorio'},'Escritório'),
           h('a',{href:'#sobre'},'Sobre Nós'),
           h('a',{href:'#especialidades'},'Especialidades'),
-          h('a',{href:'#contato'},'Contato'))),
+          h('a',{href:'#contato'},'Contato'),
+          h('a',{href:'#privacidade'},'Política de Privacidade'))),
       h('div',null,
         h('h4',{className:'footer-title'},'Áreas de Atuação'),
         h('div',{className:'footer-areas'},
@@ -399,6 +430,7 @@ function App(){
   if(route.page==='sobre')page=h(About);
   if(route.page==='especialidades')page=h(Specialties);
   if(route.page==='contato')page=h(Contact);
+  if(route.page==='privacidade')page=h(Privacy);
   return h(React.Fragment,null,h(Header,{route}),page,h(Footer),h(WhatsAppFloat));
 }
 
