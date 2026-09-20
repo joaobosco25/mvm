@@ -3,9 +3,9 @@ const {useEffect,useMemo,useState}=React;
 const h=React.createElement;
 
 const LAWYERS=[
-  {id:'rafaella',short:'Dra. R. Vasconcelos',name:'Dra. Rafaella Silva de Vasconcelos',oab:'OAB/MG 250.459',image:'assets/rafaela.png',text:'Atendimento jurídico com escuta cuidadosa, análise técnica e comunicação clara em cada etapa.'},
-  {id:'rafaele',short:'Dra. Rafaele Monteiro',name:'Dra. Rafaele Hemanuele Monteiro Rodrigues Ferreira',oab:'OAB/MG 246.172',image:'assets/rafaele.png',text:'Atuação pautada por organização, proximidade e construção de soluções jurídicas adequadas ao contexto de cada cliente.'},
-  {id:'marcus',short:'Dr. Medeiros',name:'Dr. Marcus Vinicius da Silva Medeiros Tomé',oab:'OAB/MG 243.765',image:'assets/marcus-vinicius.png',text:'Condução técnica de demandas e orientação jurídica objetiva, com atenção aos detalhes e às particularidades de cada caso.'},
+  {id:'rafaella',short:'Dra. R. Vasconcelos',name:'Dra. Rafaella Silva de Vasconcelos',oab:'OAB/MG 250.459',image:'assets/rafaela.png',text:'Atuação orientada por escuta atenta, análise criteriosa e comunicação objetiva com o cliente. Conduz cada demanda de forma individualizada, buscando compreender o contexto apresentado, organizar as informações relevantes e oferecer orientação jurídica clara ao longo de todas as etapas do atendimento.'},
+  {id:'rafaele',short:'Dra. Rafaele Monteiro',name:'Dra. Rafaele Hemanuele Monteiro Rodrigues Ferreira',oab:'OAB/MG 246.172',image:'assets/rafaele.png',text:'Atuação pautada pela proximidade, organização e atenção aos detalhes de cada caso. O atendimento é desenvolvido de forma individualizada, com análise cuidadosa das circunstâncias apresentadas, clareza na comunicação e construção de estratégias jurídicas compatíveis com as necessidades de cada cliente.'},
+  {id:'marcus',short:'Dr. Medeiros',name:'Dr. Marcus Vinicius da Silva Medeiros Tomé',oab:'OAB/MG 243.765',image:'assets/marcus-vinicius.png',text:'Atuação com foco na análise técnica e estratégica das demandas, acompanhando cada situação com responsabilidade e atenção às suas particularidades. Prioriza uma comunicação direta e compreensível, organização das informações e definição de caminhos jurídicos coerentes com o contexto apresentado pelo cliente.'},
 ];
 
 const AREAS=[
@@ -139,7 +139,7 @@ function CtaBand({title='Conheça a equipe e as áreas de atuação do escritór
 
 function Home(){
   return h('main',{id:'page-content',className:'page page-enter'},
-    h(PageHero,{type:'home',kicker:'Medeiros, Vasconcelos & Monteiro',title:'Advocacia com',em:'clareza e estratégia.',subtitle:'Atendimento jurídico técnico, próximo e responsável, com atuação multidisciplinar e comunicação objetiva do início ao fim.',primary:{href:'#contato',label:'Falar com o escritório'},secondary:{href:'#escritorio',label:'Conhecer o escritório'}}),
+    h(PageHero,{type:'home',kicker:'Medeiros, Vasconcelos & Monteiro',title:'Advocacia com',em:'compromisso e estratégia',subtitle:'Atendimento jurídico técnico, próximo e responsável, com atuação multidisciplinar e comunicação objetiva do início ao fim.',primary:{href:'#contato',label:'Falar com o escritório'},secondary:{href:'#escritorio',label:'Conhecer o escritório'}}),
 
     h('section',{className:'section section-paper'},h('div',{className:'container'},
       h('div',{className:'home-intro-grid'},
@@ -159,7 +159,6 @@ function Home(){
       h('div',{className:'section-actions'},h('a',{className:'btn btn-ghost',href:'#especialidades'},'Ver especialidades em detalhes')))),
 
     h(ProcessSection),
-    h(FactsBand),
     h('section',{className:'section home-office-teaser'},
       h('div',{className:'container office-teaser-grid'},
         h('div',{'data-reveal':true},
@@ -173,7 +172,7 @@ function Home(){
 
 function Office(){
   return h('main',{id:'page-content',className:'page page-enter'},
-    h(PageHero,{type:'office',kicker:'Escritório',title:'Uma sociedade construída sobre',em:'responsabilidade.',subtitle:'Medeiros, Vasconcelos & Monteiro | Sociedade de Advogados. Uma estrutura jurídica multidisciplinar com atendimento organizado, linguagem clara e análise individual de cada demanda.',primary:{href:'#escritorio/institucional',label:'Conhecer a sociedade'},secondary:{href:'#contato',label:'Entrar em contato'}}),
+    h(PageHero,{type:'office',kicker:'Escritório',title:'Uma sociedade construída sobre',em:'responsabilidade',subtitle:'Medeiros, Vasconcelos & Monteiro | Sociedade de Advogados. Uma estrutura jurídica multidisciplinar com atendimento organizado, linguagem clara e análise individual de cada demanda.',primary:{href:'#escritorio/institucional',label:'Conhecer a sociedade'},secondary:{href:'#contato',label:'Entrar em contato'}}),
 
     h('section',{className:'section section-paper',id:'institucional'},h('div',{className:'container office-story'},
       h('div',{'data-reveal':true},
@@ -233,7 +232,7 @@ function About(){
 
 function Specialties(){
   return h('main',{id:'page-content',className:'page page-enter'},
-    h(PageHero,{type:'specialties',kicker:'Especialidades',title:'Conhecimento jurídico.',em:'Visão integrada.',subtitle:'Atuação em nove áreas do Direito, com análise individual de cada demanda e encaminhamento técnico conforme suas particularidades.',primary:{href:'#especialidades/areas',label:'Ver áreas de atuação'},secondary:{href:'#contato',label:'Solicitar contato'}}),
+    h(PageHero,{type:'specialties',kicker:'Especialidades',title:'Conhecimento jurídico',em:'Visão integrada',subtitle:'Atuação em nove áreas do Direito, com análise individual de cada demanda e encaminhamento técnico conforme suas particularidades.',primary:{href:'#especialidades/areas',label:'Ver áreas de atuação'},secondary:{href:'#contato',label:'Solicitar contato'}}),
     h('section',{className:'section section-dark',id:'areas'},h('div',{className:'container'},
       h(SectionHeading,{number:'ATUAÇÃO',title:'Áreas de',em:'atuação.',intro:'Cada área é apresentada em caráter institucional. A definição de estratégia depende da análise dos fatos e documentos de cada caso.'}),
       h(AreaCards),
@@ -270,7 +269,7 @@ function ContactForm(){
 
 function Contact(){
   return h('main',{id:'page-content',className:'page page-enter'},
-    h(PageHero,{type:'contact',kicker:'Contato',title:'Um primeiro contato.',em:'Com clareza.',subtitle:'Fale diretamente com o escritório pelos canais institucionais abaixo. Para análise jurídica, a equipe poderá solicitar documentos e informações adicionais.',primary:{href:'#contato/canais',label:'Ver canais de contato'},secondary:{href:'mailto:contato@mvmadvocacia.com.br',label:'Enviar e-mail'}}),
+    h(PageHero,{type:'contact',kicker:'Contato',title:'Um primeiro contato',em:'Com clareza',subtitle:'Fale diretamente com o escritório pelos canais institucionais abaixo. Para análise jurídica, a equipe poderá solicitar documentos e informações adicionais.',primary:{href:'#contato/canais',label:'Ver canais de contato'},secondary:{href:'mailto:contato@mvmadvocacia.com.br',label:'Enviar e-mail'}}),
     h('section',{className:'section section-navy',id:'canais'},h('div',{className:'container contact-grid'},
       h('div',{'data-reveal':true},
         h('div',{className:'section-number'},'CONTATO'),
@@ -296,12 +295,10 @@ function WhatsAppFloat(){
     title:'WhatsApp do escritório'
   },
 
-    // ÍCONE DO WHATSAPP - IONICON
-    h('ion-icon',{
-      name:'logo-whatsapp',
-      className:'whatsapp-icon',
-      'aria-hidden':'true'
-    }),
+    // Ícone inline: não depende de biblioteca externa e funciona também no GitHub Pages/mobile
+    h('svg',{className:'whatsapp-icon',viewBox:'0 0 24 24','aria-hidden':'true'},
+      h('path',{d:'M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.4-4.2A8.5 8.5 0 1 1 20.5 11.7Z'}),
+      h('path',{d:'M8.15 7.55c.34-.35.92-.3 1.2.1l1.08 1.48c.22.31.2.73-.05 1.02l-.67.77c.75 1.55 1.77 2.57 3.33 3.33l.77-.67c.29-.25.71-.27 1.02-.05l1.48 1.08c.4.28.45.86.1 1.2l-.63.63c-.68.68-1.68.9-2.57.56-3.52-1.36-6.26-4.1-7.62-7.62-.34-.89-.12-1.89.56-2.57l.5-.5'})),
 
     // MANTÉM O ÍCONE DE JUSTIÇA
     h('span',{

@@ -19,6 +19,16 @@
 *{box-sizing:border-box}
 html{background:var(--navy);scroll-behavior:auto;scroll-padding-top:88px}
 body{margin:0;min-width:320px;background:var(--paper2);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+p{
+  text-align:justify;
+  text-justify:inter-word;
+  text-align-last:left;
+  hyphens:auto;
+  -webkit-hyphens:auto;
+  overflow-wrap:break-word;
+  word-spacing:.015em;
+}
+.form-status{ text-align:left; text-align-last:left; }
 body.menu-open{overflow:hidden}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
@@ -67,7 +77,9 @@ button{color:inherit}
 .photo-hero{position:relative;min-height:100svh;color:white;display:flex;align-items:flex-end;isolation:isolate;overflow:hidden;background-color:var(--navy)}
 .photo-hero::before{content:"";position:absolute;inset:0;z-index:-3;background-image:var(--hero-image);background-size:cover;background-position:center;transform:scale(1.01)}
 .photo-hero::after{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(4,14,24,.95) 0%,rgba(4,14,24,.76) 44%,rgba(4,14,24,.32) 74%,rgba(4,14,24,.56) 100%),linear-gradient(0deg,rgba(4,14,24,.82),transparent 48%)}
-.hero-home{--hero-image:url('https://images.unsplash.com/photo-1589216532372-1c2a367900d9?auto=format&fit=crop&w=2200&q=86')}
+.hero-home{--hero-image:url('assets/hero-equipe-home.webp')}
+
+.hero-home::before{background-position:center 18%}
 .hero-office{--hero-image:url('assets/justice-office.webp')}
 .hero-office::before{background-position:center 46%}
 .hero-specialties{--hero-image:url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=2200&q=86')}
@@ -164,8 +176,8 @@ button{color:inherit}
 .cta-band .btn:hover{background:var(--navy);color:white;border-color:var(--navy)}
 
 .office-story{display:grid;grid-template-columns:1.18fr .82fr;gap:92px;align-items:start}
-.office-story p{max-width:760px;color:#5e6a73;font-size:12px;line-height:1.95;margin:20px 0 0}
-.office-story .office-lead{font-size:15px;color:#34414a;line-height:1.85;margin-top:30px}
+.office-story p{max-width:760px;color:#5e6a73;font-size:12px;line-height:2;margin:22px 0 0;text-align:justify;text-align-last:left;hyphens:auto;letter-spacing:.002em}
+.office-story .office-lead{font-size:15px;color:#34414a;line-height:1.92;margin-top:30px;text-align:justify;text-align-last:left}
 .office-register{padding:38px;border:1px solid var(--line);background:white;box-shadow:0 24px 60px rgba(12,25,36,.08);position:sticky;top:100px}
 .office-register small{display:block;color:#8d6d2d;font-size:8px;text-transform:uppercase;letter-spacing:.18em}
 .office-register strong{display:block;margin:28px 0 18px;font-family:var(--brand);font-size:34px;color:var(--navy);font-weight:500}
@@ -301,6 +313,8 @@ button{color:inherit}
   .dropdown a:hover{padding-left:0;color:var(--gold2)}
   .photo-hero{min-height:100svh}
   .photo-hero::after{background:linear-gradient(90deg,rgba(4,14,24,.95),rgba(4,14,24,.67)),linear-gradient(0deg,rgba(4,14,24,.82),transparent 50%)}
+  .hero-home::before{background-position:58% 12%}
+
   .hero-content{padding:124px 0 70px}
   .hero-title{font-size:clamp(42px,12vw,66px);line-height:.98}
   .hero-subtitle{font-size:11px;line-height:1.8}
@@ -628,4 +642,73 @@ button{color:inherit}
   .brand{gap:0}
   .brand-logo{width:58px;height:40px}
   .brand-name{display:none}
+}
+
+/* Correção final da hero em telas mobile: ações e identificação da sociedade */
+@media(max-width:780px){
+  .hero-actions{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:12px;
+    margin-top:28px;
+  }
+  .hero-actions .btn{
+    width:100%;
+    min-height:52px;
+    margin:0;
+    position:relative;
+    z-index:1;
+  }
+  .hero-meta{
+    position:static;
+    display:grid;
+    width:100%;
+    margin-top:22px;
+    padding:15px 0 0;
+    border-top:1px solid rgba(255,255,255,.22);
+    text-align:left;
+    gap:3px;
+    color:rgba(255,255,255,.62);
+  }
+  .hero-meta strong{
+    font-size:13px;
+    line-height:1.4;
+    color:var(--gold2);
+  }
+  .hero-meta span{
+    font-size:8px;
+    line-height:1.55;
+  }
+  .hero-meta .hero-meta-oab{
+    margin-top:2px;
+    color:rgba(255,255,255,.78);
+  }
+  .hero-content{
+    padding-bottom:58px;
+  }
+}
+
+/* Ajuste de posição da hero em smartphones compactos (Samsung e equivalentes) */
+@media(max-width:430px){
+  .photo-hero{
+    align-items:flex-start;
+  }
+  .hero-content{
+    padding-top:clamp(132px,19svh,160px);
+    padding-bottom:44px;
+  }
+}
+
+/* Ajuste específico para títulos longos em smartphones compactos */
+@media(max-width:430px){
+  .hero-office .hero-title em{
+    display:block;
+    font-size:clamp(28px,8.3vw,34px);
+    line-height:1.04;
+    letter-spacing:-.035em;
+    overflow-wrap:normal;
+    word-break:normal;
+    hyphens:none;
+  }
 }
