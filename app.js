@@ -172,7 +172,7 @@ function Office(){
     h('section',{className:'section section-paper',id:'institucional'},h('div',{className:'container office-story'},
       h('div',{'data-reveal':true},
         h('div',{className:'section-number'},'INSTITUCIONAL'),
-        h('h2',{className:'section-title',style:{marginTop:'16px'}},'Medeiros, Vasconcelos ',h('em',null,'& Monteiro.')),
+        h('h2',{className:'section-title',style:{marginTop:'16px'}},'Medeiros, ',h('em',null,'Vasconcelos'),' & Monteiro'),
         h('p',{className:'office-lead'},'A sociedade reúne três advogados responsáveis e atuação em nove áreas do Direito. O atendimento é organizado para permitir compreensão do caso, análise documental e construção de caminhos jurídicos compatíveis com a situação apresentada.'),
         h('p',null,'A identidade do escritório parte de três pontos: seriedade técnica, comunicação acessível e proximidade no acompanhamento. Cada demanda possui características próprias e, por isso, é tratada de forma individualizada.')),
       h('aside',{className:'office-register','data-reveal':true},
@@ -271,9 +271,9 @@ function Contact(){
         h('p',{className:'section-intro'},'Utilize o e-mail institucional ou os telefones informados. Para uma análise adequada, a equipe poderá solicitar informações e documentos adicionais.'),
         h('div',{className:'contact-list'},
           h('div',{className:'contact-item'},h('div',null,h('small',null,'E-mail institucional'),h('b',null,'contato@mvmadvocacia.com.br')),h('a',{href:'mailto:contato@mvmadvocacia.com.br'},'Enviar e-mail')),
-          h('div',{className:'contact-item'},h('div',null,h('small',null,'Telefone do escritório'),h('b',null,'(34) 99660-0327')),h('a',{href:'tel:+5534996600327'},'Ligar')),
-          h('div',{className:'contact-item'},h('div',null,h('small',null,'Dra. Rafaella'),h('b',null,'(34) 99143-9667')),h('a',{href:'tel:+5534991439667'},'Ligar')),
-          h('div',{className:'contact-item'},h('div',null,h('small',null,'Dra. Rafaele'),h('b',null,'(34) 99770-6151')),h('a',{href:'tel:+5534997706151'},'Ligar')))),
+          h('div',{className:'contact-item'},h('div',null,h('small',null,'Dr Marcus Vinicius'),h('b',null,'(34) 99660-0327')),h('a',{href:'tel:+5534996600327'},'Ligar')),
+          h('div',{className:'contact-item'},h('div',null,h('small',null,'Dra. Rafaella Vasconcelos'),h('b',null,'(34) 99143-9667')),h('a',{href:'tel:+5534991439667'},'Ligar')),
+          h('div',{className:'contact-item'},h('div',null,h('small',null,'Dra. Rafaele Monteiro'),h('b',null,'(34) 99770-6151')),h('a',{href:'tel:+5534997706151'},'Ligar')))),
       h(ContactForm))));
 }
 
@@ -346,7 +346,7 @@ function Footer(){
         h('div',{className:'footer-brand'},'Medeiros, ',h('span',null,'Vasconcelos'),' & Monteiro'),
         h('div',{className:'footer-brand-tag'},'Sociedade de Advogados'),
         h('div',{className:'footer-brand-oab'},'OAB/MG 23.417'),
-        h('small',null,'CNPJ 67.853.140/0001-83')),
+        h('small',null,'CNPJ: 67.853.140/0001-83')),
       h('div',null,
         h('h4',{className:'footer-title'},'Institucional'),
         h('nav',{className:'footer-nav','aria-label':'Rodapé'},
@@ -368,7 +368,7 @@ function Footer(){
           h('a',{href:'mailto:contato@mvmadvocacia.com.br'},'contato@mvmadvocacia.com.br'),
           h('span',null,'Uberlândia/MG')))),
     h('div',{className:'container footer-bottom'},
-      h('span',null,`© ${year} Medeiros, Vasconcelos & Monteiro Sociedade de Advogados · CNPJ 67.853.140/0001-83`),
+      h('span',null,`© ${year} Medeiros, Vasconcelos & Monteiro Sociedade de Advogados · CNPJ: 67.853.140/0001-83`),
       h('span',null,'Uberlândia/MG · Conteúdo institucional e informativo')));
 }
 
