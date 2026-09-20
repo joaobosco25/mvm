@@ -124,13 +124,6 @@ function ProcessSection({dark=false}){
         h('h3',null,t),h('p',null,d))))));
 }
 
-function FactsBand(){
-  return h('section',{className:'facts-band'},h('div',{className:'container facts-grid'},
-    h('div',null,h('strong',null,'9'),h('span',null,'áreas de atuação informadas')),
-    h('div',null,h('strong',null,'3'),h('span',null,'advogados responsáveis')),
-    h('div',null,h('strong',null,'23.417'),h('span',null,'OAB/MG da sociedade')),
-    h('div',null,h('strong',null,'MVM'),h('span',null,'Medeiros, Vasconcelos & Monteiro'))));
-}
 
 function CtaBand({title='Conheça a equipe e as áreas de atuação do escritório.',href='#sobre',label='Sobre Nós'}){
   return h('section',{className:'cta-band'},h('div',{className:'container cta-band-grid'},
@@ -195,7 +188,6 @@ function Office(){
         h('article',{'data-reveal':true},h('h3',null,'Sigilo e responsabilidade'),h('p',null,'Tratamento profissional das informações compartilhadas no contexto jurídico e institucional.'))))),
 
     h(ProcessSection,{dark:true}),
-    h(FactsBand),
     h(CtaBand,{title:'Conheça os profissionais responsáveis pela sociedade.',href:'#sobre',label:'Sobre Nós'}));
 }
 
