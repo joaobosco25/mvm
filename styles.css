@@ -77,7 +77,7 @@ button{color:inherit}
 .photo-hero{position:relative;min-height:100svh;color:white;display:flex;align-items:flex-end;isolation:isolate;overflow:hidden;background-color:var(--navy)}
 .photo-hero::before{content:"";position:absolute;inset:0;z-index:-3;background-image:var(--hero-image);background-size:cover;background-position:center;transform:scale(1.01)}
 .photo-hero::after{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(4,14,24,.95) 0%,rgba(4,14,24,.76) 44%,rgba(4,14,24,.32) 74%,rgba(4,14,24,.56) 100%),linear-gradient(0deg,rgba(4,14,24,.82),transparent 48%)}
-.hero-home{--hero-image:url('assets/hero-equipe-home.webp');--hero-parallax-y:0px;--hero-parallax-scale:1.03;--hero-photo-opacity:1;--hero-photo-brightness:1}
+.hero-home{--hero-image:url('assets/hero-equipe-home.webp');--hero-parallax-y:0px;--hero-parallax-scale:1.04;--hero-photo-opacity:1;--hero-photo-brightness:1}
 
 .hero-home::before{inset:-8% 0;background-position:center 18%;transform:translate3d(0,var(--hero-parallax-y),0) scale(var(--hero-parallax-scale));transform-origin:center;opacity:var(--hero-photo-opacity);filter:brightness(var(--hero-photo-brightness)) saturate(1.02);will-change:transform,opacity,filter}
 .hero-office{--hero-image:url('assets/justice-office.webp')}
@@ -307,8 +307,8 @@ button{color:inherit}
   .dropdown a:hover{padding-left:0;color:var(--gold2)}
   .photo-hero{min-height:100svh}
   .photo-hero::after{background:linear-gradient(90deg,rgba(4,14,24,.95),rgba(4,14,24,.67)),linear-gradient(0deg,rgba(4,14,24,.82),transparent 50%)}
-  .hero-home{--hero-image:url('assets/hero-equipe-home-mobile.webp')}
-  .hero-home::before{background-position:center 8%}
+  .hero-home{--hero-image:url('assets/hero-equipe-home-mobile.webp');--hero-parallax-scale:1.05}
+  .hero-home::before{background-position:center 8%;transform-origin:50% 30%}
 
   .hero-content{padding:124px 0 70px}
   .hero-title{font-size:clamp(42px,12vw,66px);line-height:.98}
@@ -740,4 +740,69 @@ button{color:inherit}
   .privacy-hero{padding:118px 0 58px}
   .privacy-hero h1{font-size:clamp(38px,11vw,52px)}
   .privacy-content h2{font-size:19px}
+}
+
+/* Refinamento final de legibilidade e identidade do rodapé */
+.footer-logo-wrap{
+  width:210px;
+  height:142px;
+  position:relative;
+  overflow:visible;
+  background:transparent;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+}
+.footer-logo-wrap::after{
+  left:4px;
+  right:4px;
+  bottom:0;
+  background:linear-gradient(90deg,transparent,rgba(199,166,92,.72),transparent);
+}
+.footer-logo{
+  position:relative;
+  top:auto;
+  left:auto;
+  width:200px;
+  max-width:100%;
+  height:auto;
+  display:block;
+  transform:none;
+  filter:drop-shadow(0 10px 22px rgba(0,0,0,.18));
+}
+
+/* Parágrafos: aumento discreto para leitura confortável em todo o site */
+.hero-subtitle{font-size:14px;line-height:1.9}
+.section-intro{font-size:14px;line-height:1.9}
+.home-intro-copy p{font-size:14px;line-height:1.95}
+.home-values p{font-size:13px;line-height:1.88}
+.practice-card p{font-size:13px;line-height:1.9}
+.disclaimer{font-size:11px;line-height:1.85}
+.process-card p{font-size:13px;line-height:1.9}
+.office-story p{font-size:14px;line-height:1.95}
+.office-story .office-lead{font-size:16px;line-height:1.9}
+.office-principles .section-intro{font-size:15px;line-height:1.9}
+.principles-grid p{font-size:14px;line-height:1.9}
+.about-opening-copy p{font-size:14px;line-height:1.92}
+.lawyer-info p{font-size:14px;line-height:1.9}
+.form-status{font-size:11px;line-height:1.6}
+.privacy-hero p{font-size:14px;line-height:1.9}
+.privacy-content p{font-size:14px;line-height:1.95}
+.privacy-last-update{font-size:12px!important;line-height:1.8}
+
+@media(max-width:780px){
+  .footer-logo-wrap{width:184px;height:124px}
+  .footer-logo{width:176px}
+  .hero-subtitle{font-size:13px}
+  .section-intro,
+  .home-intro-copy p,
+  .office-story p,
+  .principles-grid p,
+  .about-opening-copy p,
+  .lawyer-info p,
+  .privacy-hero p,
+  .privacy-content p{font-size:13px}
+  .home-values p,.practice-card p,.process-card p{font-size:12.5px}
+  .office-story .office-lead{font-size:15px}
+  .office-principles .section-intro{font-size:14px}
 }

@@ -345,7 +345,7 @@ function Footer(){
     h('div',{className:'container footer-main'},
       h('div',{className:'footer-brand-col'},
         h('div',{className:'footer-logo-wrap'},
-          h('img',{className:'footer-logo',src:'assets/logo-mvm-cropped.jpg',alt:'Logo Medeiros, Vasconcelos & Monteiro Sociedade de Advogados',loading:'lazy'})),
+          h('img',{className:'footer-logo',src:'assets/logo-mvm-navbar.png',alt:'Logo Medeiros, Vasconcelos & Monteiro Sociedade de Advogados',loading:'lazy'})),
         h('div',{className:'footer-brand'},'Medeiros, ',h('span',null,'Vasconcelos'),' & Monteiro'),
         h('div',{className:'footer-brand-tag'},'Sociedade de Advogados'),
         h('div',{className:'footer-brand-oab'},'OAB/MG 23.417'),
@@ -448,11 +448,17 @@ function App(){
     const update=()=>{
       raf=0;
       const height=Math.max(hero.offsetHeight,1);
-      const progress=Math.min(Math.max(-hero.getBoundingClientRect().top/height,0),1);
-      hero.style.setProperty('--hero-parallax-y',`${(progress*78).toFixed(1)}px`);
-      hero.style.setProperty('--hero-parallax-scale',(1.03+progress*.075).toFixed(4));
-      hero.style.setProperty('--hero-photo-opacity',(1-progress*.12).toFixed(3));
-      hero.style.setProperty('--hero-photo-brightness',(1-progress*.10).toFixed(3));
+      const scrollTop=window.scrollY||document.documentElement.scrollTop||0;
+      const heroTop=hero.offsetTop||0;
+      const progress=Math.min(Math.max((scrollTop-heroTop)/height,0),1);
+      const mobile=matchMedia('(max-width:780px)').matches;
+      const baseScale=mobile?1.05:1.04;
+      const zoomDelta=mobile?.13:.09;
+      const moveY=mobile?34:86;
+      hero.style.setProperty('--hero-parallax-y',`${(progress*moveY).toFixed(1)}px`);
+      hero.style.setProperty('--hero-parallax-scale',(baseScale+progress*zoomDelta).toFixed(4));
+      hero.style.setProperty('--hero-photo-opacity',(1-progress*.10).toFixed(3));
+      hero.style.setProperty('--hero-photo-brightness',(1-progress*.08).toFixed(3));
     };
     const requestUpdate=()=>{
       if(!raf)raf=requestAnimationFrame(update);
@@ -461,9 +467,19 @@ function App(){
     update();
     addEventListener('scroll',requestUpdate,{passive:true});
     addEventListener('resize',requestUpdate,{passive:true});
+    addEventListener('touchmove',requestUpdate,{passive:true});
+    if(window.visualViewport){
+      visualViewport.addEventListener('scroll',requestUpdate,{passive:true});
+      visualViewport.addEventListener('resize',requestUpdate,{passive:true});
+    }
     return()=>{
       removeEventListener('scroll',requestUpdate);
       removeEventListener('resize',requestUpdate);
+      removeEventListener('touchmove',requestUpdate);
+      if(window.visualViewport){
+        visualViewport.removeEventListener('scroll',requestUpdate);
+        visualViewport.removeEventListener('resize',requestUpdate);
+      }
       if(raf)cancelAnimationFrame(raf);
       hero.style.removeProperty('--hero-parallax-y');
       hero.style.removeProperty('--hero-parallax-scale');
