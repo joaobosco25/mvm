@@ -181,7 +181,7 @@ function Office(){
         h('span',null,'MEDEIROS, VASCONCELOS & MONTEIRO'),
         h('span',null,'SOCIEDADE DE ADVOGADOS')))),
 
-    h('section',{className:'section section-ivory'},h('div',{className:'container'},
+    h('section',{className:'section section-ivory office-principles'},h('div',{className:'container'},
       h(SectionHeading,{number:'PRINCÍPIOS',title:'Como o escritório',em:'trabalha.',intro:'Princípios institucionais que orientam a experiência de atendimento e a organização das demandas.'}),
       h('div',{className:'principles-grid'},
         h('article',{'data-reveal':true},h('h3',null,'Análise individual'),h('p',null,'Cada situação é observada a partir de seus fatos, documentos e objetivos, evitando soluções genéricas.')),

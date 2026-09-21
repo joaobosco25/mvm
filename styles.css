@@ -77,9 +77,9 @@ button{color:inherit}
 .photo-hero{position:relative;min-height:100svh;color:white;display:flex;align-items:flex-end;isolation:isolate;overflow:hidden;background-color:var(--navy)}
 .photo-hero::before{content:"";position:absolute;inset:0;z-index:-3;background-image:var(--hero-image);background-size:cover;background-position:center;transform:scale(1.01)}
 .photo-hero::after{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(4,14,24,.95) 0%,rgba(4,14,24,.76) 44%,rgba(4,14,24,.32) 74%,rgba(4,14,24,.56) 100%),linear-gradient(0deg,rgba(4,14,24,.82),transparent 48%)}
-.hero-home{--hero-image:url('assets/hero-equipe-home.webp')}
+.hero-home{--hero-image:url('assets/hero-equipe-home.webp');--hero-parallax-y:0px;--hero-parallax-scale:1.03;--hero-photo-opacity:1;--hero-photo-brightness:1}
 
-.hero-home::before{background-position:center 18%}
+.hero-home::before{inset:-8% 0;background-position:center 18%;transform:translate3d(0,var(--hero-parallax-y),0) scale(var(--hero-parallax-scale));transform-origin:center;opacity:var(--hero-photo-opacity);filter:brightness(var(--hero-photo-brightness)) saturate(1.02);will-change:transform,opacity,filter}
 .hero-office{--hero-image:url('assets/justice-office.webp')}
 .hero-office::before{background-position:center 46%}
 .hero-specialties{--hero-image:url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=2200&q=86')}
@@ -176,11 +176,12 @@ button{color:inherit}
 .office-register small{display:block;color:#8d6d2d;font-size:8px;text-transform:uppercase;letter-spacing:.18em}
 .office-register strong{display:block;margin:28px 0 18px;font-family:var(--brand);font-size:34px;color:var(--navy);font-weight:500}
 .office-register span{display:block;font-family:var(--brand);font-size:12px;line-height:1.55;color:#4e5961}
+.office-principles .section-intro{font-size:14px;line-height:1.9;max-width:780px}
 .principles-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 .principles-grid article{padding:34px 34px 38px;background:#fff;border:1px solid var(--line);min-height:245px}
 .principles-grid span{font-family:var(--brand);font-size:10px;color:var(--gold)}
 .principles-grid h3{font-family:var(--brand);font-weight:500;text-transform:uppercase;font-size:21px;margin:0 0 14px}
-.principles-grid p{font-size:10px;line-height:1.85;color:#68737b;margin:0;max-width:480px}
+.principles-grid p{font-size:13px;line-height:1.9;color:#68737b;margin:0;max-width:500px}
 
 .about-page{background:var(--paper2)}
 .about-opening{position:relative;min-height:100svh;padding:142px 0 76px;background:radial-gradient(circle at 76% 18%,rgba(186,144,77,.14),transparent 26%),linear-gradient(90deg,#0a1723 0%,#0d1f30 42%,#13293b 100%);display:flex;align-items:center;overflow:hidden;color:#f6f1e7;isolation:isolate}
@@ -207,7 +208,7 @@ button{color:inherit}
 .lawyer-info small{display:block;margin-bottom:10px;color:#8a6e33;font-size:8px;letter-spacing:.18em;text-transform:uppercase}
 .lawyer-info h3{margin:0;font-family:var(--brand);font-size:20px;line-height:1.27;font-weight:500;text-transform:uppercase}
 .lawyer-info .oab{margin-top:10px;color:#68747c;font-size:10px}
-.lawyer-info p{margin:18px 0 0;color:#66717a;font-size:10px;line-height:1.85}
+.lawyer-info p{margin:18px 0 0;color:#66717a;font-size:13px;line-height:1.9}
 .lawyer-anchor{scroll-margin-top:96px}
 
 .contact-grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:90px;align-items:start}
@@ -217,6 +218,7 @@ button{color:inherit}
 .contact-item b{font-family:var(--brand);font-weight:500;font-size:13px;line-height:1.4}
 .contact-item a{color:var(--gold2);font-size:10px;white-space:nowrap}
 .contact-form{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.13);padding:35px}
+.home-contact-inner{max-width:920px;margin:0 auto}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .contact-form label{display:block;margin-bottom:18px}
 .contact-form label>span{display:block;margin-bottom:8px;color:rgba(255,255,255,.55);font-size:7px;text-transform:uppercase;letter-spacing:.16em}
@@ -521,13 +523,35 @@ button{color:inherit}
 .footer-main{grid-template-columns:1.1fr .7fr 1fr .85fr;gap:42px}
 .footer-brand-col{display:flex;flex-direction:column;align-items:flex-start}
 .footer-logo-wrap{
-  width:138px;
-  padding:10px;
-  background:#f8f5ef;
-  border:1px solid rgba(199,166,92,.2);
-  box-shadow:0 12px 30px rgba(0,0,0,.08);
+  width:164px;
+  height:104px;
+  position:relative;
+  overflow:hidden;
+  background:#fff;
+  border:1px solid rgba(199,166,92,.55);
+  border-radius:22px 7px 22px 7px;
+  box-shadow:0 16px 34px rgba(0,0,0,.2),inset 0 0 0 4px rgba(199,166,92,.055);
 }
-.footer-logo{width:100%;height:auto;display:block}
+.footer-logo-wrap::after{
+  content:"";
+  position:absolute;
+  left:18px;
+  right:18px;
+  bottom:7px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(199,166,92,.72),transparent);
+  pointer-events:none;
+}
+.footer-logo{
+  position:absolute;
+  top:0;
+  left:50%;
+  width:220px;
+  max-width:none;
+  height:auto;
+  display:block;
+  transform:translateX(-50%);
+}
 .footer-brand{margin-top:18px;font-size:22px;line-height:1.18}
 .footer-brand-tag{
   margin-top:12px;
@@ -572,7 +596,8 @@ button{color:inherit}
   .office-society-line strong,.about-opening-mark strong{font-size:12px}
   .lawyer-photo-rafaele{height:auto;aspect-ratio:1/1}
   .footer-main{grid-template-columns:1fr;gap:30px}
-  .footer-logo-wrap{width:126px}
+  .footer-logo-wrap{width:150px;height:95px}
+  .footer-logo{width:202px}
   .footer-brand{font-size:20px}
 }
 
