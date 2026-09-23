@@ -148,6 +148,23 @@ function Home(){
         h('article',null,h('h3',null,'Estratégia'),h('p',null,'Análise técnica e definição de medidas compatíveis com cada situação concreta.')),
         h('article',null,h('h3',null,'Clareza'),h('p',null,'Comunicação objetiva para que o cliente compreenda etapas, documentos e próximos passos.'))))),
 
+    h('section',{className:'section section-ivory home-team-section'},
+      h('div',{className:'container home-team-grid'},
+        h('div',{className:'home-team-photo-wrap','data-reveal':true},
+          h('div',{className:'home-team-photo-frame'},
+            h('img',{className:'home-team-photo',src:'assets/foto dos 3.jpeg',alt:'Dr. Marcus Vinicius, Dra. Rafaella Vasconcelos e Dra. Rafaele Monteiro'}),
+            h('span',{className:'home-team-photo-accent','aria-hidden':'true'}))),
+        h('div',{className:'home-team-copy','data-reveal':true},
+          h('div',{className:'section-number'},'ADVOGADOS RESPONSÁVEIS'),
+          h('h2',{className:'section-title'},'Os três responsáveis pela ',h('em',null,'sociedade')),
+          h('p',{className:'section-intro'},'A sociedade é conduzida por três advogados responsáveis, com atuação complementar e atenção individual a cada demanda. A proposta institucional une escuta qualificada, análise técnica e acompanhamento próximo, preservando seriedade, clareza e organização em todas as etapas do atendimento.'),
+          h('div',{className:'home-team-names'},
+            LAWYERS.map(lawyer=>h('article',{key:lawyer.id,className:'home-team-name-card'},
+              h('strong',null,lawyer.short),
+              h('span',null,lawyer.oab)
+            ))),
+          h('a',{className:'btn btn-dark',href:'#sobre'},'Conhecer a equipe')))),
+
     h('section',{className:'section section-dark home-practice'},h('div',{className:'container'},
       h(SectionHeading,{number:'ÁREAS DE ATUAÇÃO',title:'Atuação',em:'multidisciplinar',intro:'Nove frentes jurídicas apresentadas de forma institucional. A estratégia de cada caso depende da análise individual dos fatos e documentos.'}),
       h(AreaCards,{compact:true}),

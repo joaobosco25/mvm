@@ -77,7 +77,7 @@ button{color:inherit}
 .photo-hero{position:relative;min-height:100svh;color:white;display:flex;align-items:flex-end;isolation:isolate;overflow:hidden;background-color:var(--navy)}
 .photo-hero::before{content:"";position:absolute;inset:0;z-index:-3;background-image:var(--hero-image);background-size:cover;background-position:center;transform:scale(1.01)}
 .photo-hero::after{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(4,14,24,.95) 0%,rgba(4,14,24,.76) 44%,rgba(4,14,24,.32) 74%,rgba(4,14,24,.56) 100%),linear-gradient(0deg,rgba(4,14,24,.82),transparent 48%)}
-.hero-home{--hero-image:url('assets/hero-equipe-home.webp');--hero-parallax-y:0px;--hero-parallax-scale:1.04;--hero-photo-opacity:1;--hero-photo-brightness:1}
+.hero-home{--hero-image:url('assets/justice-office.webp');--hero-parallax-y:0px;--hero-parallax-scale:1.04;--hero-photo-opacity:1;--hero-photo-brightness:1}
 
 .hero-home::before{inset:-8% 0;background-position:center 18%;transform:translate3d(0,var(--hero-parallax-y),0) scale(var(--hero-parallax-scale));transform-origin:center;opacity:var(--hero-photo-opacity);filter:brightness(var(--hero-photo-brightness)) saturate(1.02);will-change:transform,opacity,filter}
 .hero-office{--hero-image:url('assets/justice-office.webp')}
@@ -128,6 +128,21 @@ button{color:inherit}
 .home-values b{font-family:var(--brand);font-size:11px;color:var(--gold)}
 .home-values h3{font-family:var(--brand);font-size:18px;margin:0 0 10px;font-weight:500;text-transform:uppercase}
 .home-values p{margin:0;color:#65717a;font-size:10px;line-height:1.8}
+
+.home-team-section{background:#f3eee4;position:relative;overflow:hidden}
+.home-team-section::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.28),transparent 32%);pointer-events:none}
+.home-team-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:74px;align-items:center}
+.home-team-photo-wrap{position:relative}
+.home-team-photo-frame{position:relative;overflow:hidden;border-radius:6px 46px 6px 46px;background:#fff;border:1px solid rgba(166,126,49,.28);box-shadow:0 36px 72px rgba(6,18,29,.14),18px 18px 0 rgba(177,137,57,.1)}
+.home-team-photo-frame::before{content:"";position:absolute;inset:16px;border:1px solid rgba(255,255,255,.52);border-radius:4px 30px 4px 30px;pointer-events:none;z-index:2}
+.home-team-photo{display:block;width:100%;height:100%;object-fit:cover;object-position:center center;min-height:460px}
+.home-team-photo-accent{position:absolute;left:30px;bottom:28px;width:110px;height:1px;background:linear-gradient(90deg,#d6b26a,transparent);box-shadow:0 -8px 0 -4px rgba(214,178,106,.8);z-index:2}
+.home-team-copy .section-title{margin-bottom:18px}
+.home-team-copy .section-intro{max-width:620px}
+.home-team-names{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:30px 0 34px}
+.home-team-name-card{padding:18px 18px 16px;border:1px solid rgba(14,28,39,.09);background:rgba(255,255,255,.72);backdrop-filter:blur(4px);border-radius:3px 20px 3px 20px;box-shadow:0 18px 32px rgba(6,18,29,.05)}
+.home-team-name-card strong{display:block;font-family:var(--brand);font-size:16px;line-height:1.25;font-weight:500;color:#081521}
+.home-team-name-card span{display:block;margin-top:8px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8f7651}
 
 .practice-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--darkline);border-left:1px solid var(--darkline)}
 .practice-card{position:relative;min-height:320px;padding:28px 28px 30px;border-right:1px solid var(--darkline);border-bottom:1px solid var(--darkline);overflow:hidden;transition:.32s var(--ease)}
@@ -250,7 +265,7 @@ button{color:inherit}
   .brand{min-width:auto}
   .hero-meta{display:none}
   .section-head{grid-template-columns:110px 1fr;gap:28px}
-  .home-intro-grid,.office-story,.contact-grid{grid-template-columns:1fr;gap:48px}
+  .home-intro-grid,.office-story,.contact-grid,.home-team-grid{grid-template-columns:1fr;gap:48px}
   .office-register{position:static}
   .process-grid{grid-template-columns:repeat(2,1fr)}
   .process-card:nth-child(3){border-left:0;border-top:1px solid var(--line);padding-left:0}
@@ -262,6 +277,7 @@ button{color:inherit}
   .about-opening-copy{width:min(58%,680px)}
   .office-teaser-grid{grid-template-columns:1fr;gap:38px}
   .home-office-teaser::before{inset:0;background:linear-gradient(180deg,rgba(238,232,222,.98) 0 44%,rgba(238,232,222,.2))}
+  .home-team-names{grid-template-columns:1fr 1fr}
 }
 
 @media(max-width:780px){
@@ -307,8 +323,8 @@ button{color:inherit}
   .dropdown a:hover{padding-left:0;color:var(--gold2)}
   .photo-hero{min-height:100svh}
   .photo-hero::after{background:linear-gradient(90deg,rgba(4,14,24,.95),rgba(4,14,24,.67)),linear-gradient(0deg,rgba(4,14,24,.82),transparent 50%)}
-  .hero-home{--hero-image:url('assets/hero-equipe-home-mobile.webp');--hero-parallax-scale:1.05}
-  .hero-home::before{background-position:center 8%;transform-origin:50% 30%}
+  .hero-home{--hero-image:url('assets/justice-office.webp');--hero-parallax-scale:1.05}
+  .hero-home::before{background-position:58% center;transform-origin:50% 30%}
 
   .hero-content{padding:124px 0 70px}
   .hero-title{font-size:clamp(42px,12vw,66px);line-height:.98}
@@ -352,6 +368,8 @@ button{color:inherit}
   .contact-item a{white-space:normal}
   .office-teaser-grid{min-height:0}
   .teaser-image{min-height:360px;border-radius:2px 28px 2px 28px;box-shadow:0 24px 54px rgba(6,18,29,.16),10px 10px 0 rgba(177,137,57,.1);transform:none}
+  .home-team-photo{min-height:320px}
+  .home-team-photo-frame{border-radius:4px 30px 4px 30px;box-shadow:0 24px 54px rgba(6,18,29,.12),10px 10px 0 rgba(177,137,57,.08)}
   .teaser-image::before{inset:9px;border-radius:1px 20px 1px 20px}
   .footer-main{grid-template-columns:1fr;gap:30px}
   .footer-bottom{flex-direction:column}
