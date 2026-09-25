@@ -271,6 +271,10 @@ function ContactForm(){
     setStatus('Seu aplicativo de e-mail será aberto com a mensagem preenchida.');
   };
   return h('form',{className:'contact-form',onSubmit:submit,noValidate:true,'data-reveal':true},
+    h('div',{className:'contact-form-heading'},
+      h('span',{className:'contact-form-kicker'},'CONTATO POR E-MAIL'),
+      h('h3',{className:'contact-form-title'},'Envie uma mensagem'),
+      h('p',{className:'contact-form-intro'},'Preencha os campos abaixo e prepare sua mensagem para o e-mail institucional do escritório.')),
     h('div',{className:'field-row'},
       h('label',null,h('span',null,'Nome'),h('input',{name:'nome',autoComplete:'name',placeholder:'Seu nome'})),
       h('label',null,h('span',null,'E-mail'),h('input',{name:'email',type:'email',autoComplete:'email',placeholder:'voce@email.com'}))),

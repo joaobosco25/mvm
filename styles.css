@@ -233,6 +233,10 @@ button{color:inherit}
 .contact-item b{font-family:var(--brand);font-weight:500;font-size:13px;line-height:1.4}
 .contact-item a{color:var(--gold2);font-size:10px;white-space:nowrap}
 .contact-form{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.13);padding:35px}
+.contact-form-heading{margin:0 0 30px;padding:0 0 24px;border-bottom:1px solid rgba(255,255,255,.12)}
+.contact-form-kicker{display:block;margin-bottom:10px;color:var(--gold2);font-size:8px;font-weight:600;letter-spacing:.19em;text-transform:uppercase}
+.contact-form-title{margin:0;font-family:var(--brand);font-size:clamp(25px,2.4vw,34px);line-height:1.08;font-weight:500;text-transform:uppercase;color:#fff}
+.contact-form-intro{max-width:620px;margin:12px 0 0;color:rgba(255,255,255,.62);font-size:13px;line-height:1.75}
 .home-contact-inner{max-width:920px;margin:0 auto}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .contact-form label{display:block;margin-bottom:18px}
@@ -364,6 +368,9 @@ button{color:inherit}
   .contact-grid{gap:46px}
   .field-row{grid-template-columns:1fr;gap:0}
   .contact-form{padding:26px 20px}
+  .contact-form-heading{margin-bottom:24px;padding-bottom:20px}
+  .contact-form-title{font-size:26px}
+  .contact-form-intro{font-size:12.5px;line-height:1.7}
   .contact-item{flex-direction:column;gap:7px}
   .contact-item a{white-space:normal}
   .office-teaser-grid{min-height:0}
